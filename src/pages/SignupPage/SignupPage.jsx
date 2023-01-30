@@ -1,21 +1,19 @@
 import { Button, Form, Grid, Header, Image, Segment } from "semantic-ui-react";
 import { useState } from "react";
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
-
 import { useNavigate } from "react-router-dom";
-
 import userService from "../../utils/userService";
+import "./SignupPage.css";
+
 
 function SignUpPage({handleSignUpOrLogin}) {
+  
   const [state, setState] = useState({
     username: "",
     email: "",
     password: "",
     passwordConf: "",
-    bio: "",
   });
-
-  const [selectedFile, setSelectedFile] = useState("");
 
   const [error, setError] = useState("");
 
@@ -24,27 +22,23 @@ function SignUpPage({handleSignUpOrLogin}) {
   async function handleSubmit(e) {
     e.preventDefault(); 
 
-    // const formData = new FormData();
-    // formData.append("photo", selectedFile);
 
     for (let key in state) {
-      formData.append(key, state[key]);
+      setState(key, state[key]);
     }
 
-	
-    console.log(formData.forEach((item) => console.log(item)));
 
 	try {
 		
-		await userService.signup(formData); 
+		await userService.signup(state); 
 
 		handleSignUpOrLogin(); 
 
 		navigate('/')
 
 	} catch(err){
-		console.log(err.message, ' this is the error in signup')
-		setError('Check your terminal, there was an error signing up')
+		console.log(err.message, 'sign up not working')
+		setError('Sign up not working, check')
 	}
 
   }
@@ -56,10 +50,6 @@ function SignUpPage({handleSignUpOrLogin}) {
     });
   }
 
-  function handleFileInput(e) {
-    
-    setSelectedFile(e.target.files[0]);
-  }
 
   return (
     <Grid 
@@ -68,9 +58,9 @@ function SignUpPage({handleSignUpOrLogin}) {
     verticalAlign="middle"
     >
       <Grid.Column style={{ maxWidth: 400 }}>
-        <Header as="h2" color="orange" textAlign="center">
+        <Header as="h2"  color="orange" textAlign="center">
           <Image style={{ width: 900, height: 200 }} src="https://i.imgur.com/bmvBJ82.png" /> 
-          <h2>Sign Up</h2>
+          <p>Sign up to sight see on traveloSOPHY</p>
         </Header>
         <Form autoComplete="off" onSubmit={handleSubmit}>
           <Segment stacked>

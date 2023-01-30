@@ -10,7 +10,7 @@ import {
   Button, 
   Form, 
   Grid,
-  Image, 
+  Image,
   Message, 
   Segment 
 } from "semantic-ui-react";
