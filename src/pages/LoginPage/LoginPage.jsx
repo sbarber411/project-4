@@ -50,8 +50,8 @@ export default function LoginPage(props) {
       verticalAlign="middle"
     >
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Image src= "https://i.imgur.com/bmvBJ82.png" /> 
-          <div className color="orange" textAlign="center">  
+        <Image style={{ width: 900, height: 200 }}src= "https://i.imgur.com/bmvBJ82.png" /> 
+        <div className as="h2" color="orange" textAlign="center">  
           <h2>Welcome to traveloSOPHY!</h2>
           <h3>The world is my playground.</h3>
           </div>
