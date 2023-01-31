@@ -4,6 +4,7 @@ import "./App.css";
 import userService from "./utils/userService";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import SignUpPage from "./pages/SignupPage/SignupPage";
+import TripPage from "./pages/TripPage/TripPage";
 
 function App() {
   const [user, setUser] = useState(userService.getUser());
@@ -13,11 +14,12 @@ function App() {
   }
   return (
     <Routes>
-      <Route path="/" element={<h1>Home Pageeeeeeeeeee</h1>} />
+      <Route path="/" element={<TripPage loggedUser={user}/>} />
       <Route path="/login" element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
         />
       <Route path="/signup" element={<SignUpPage handleSignUpOrLogin={handleSignUpOrLogin} />}
         />
+      {/* <Route path="/t" element={<TripPage />} /> */}
     </Routes>
   );
 }
