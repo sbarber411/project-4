@@ -117,7 +117,7 @@ function TripPage({ loggedUser, handleLogout }) {
                 </Grid.Column>
             </Grid.Row>
 
-            <Divider horizontal className="header">Discover</Divider>
+            {/* <Divider horizontal className="header"></Divider> */}
 
             <Grid.Row>
                 {/* <Image src="https://media3.giphy.com/media/AErExHJVxRbkm5hPkB/giphy.gif?cid=ecf05e476vnne6m7ln12g04a6ky4y4swlc0mthwgoeul2poa&rid=giphy.gif&ct=g" size="small" circular /> */}

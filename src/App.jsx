@@ -19,11 +19,12 @@ function App() {
         />
       <Route path="/signup" element={<SignUpPage handleSignUpOrLogin={handleSignUpOrLogin} />}
         />
-      {/* <Route path="/t" element={<TripPage />} /> */}
     </Routes>
   );
 }
 
 export default App;
+
+
 
 

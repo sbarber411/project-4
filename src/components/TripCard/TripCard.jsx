@@ -50,9 +50,6 @@ function TripCard({ trip, isProfile, addLike, removeLike, deleteTrip, loggedUser
 
 
 
-
-
-
         </Card>
     );
 }

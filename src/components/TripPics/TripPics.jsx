@@ -3,7 +3,7 @@ import { Card, Dimmer, Segment, Image } from 'semantic-ui-react'
 import TripCard from '../TripCard/TripCard';
 import Loader from '../Loader/Loader';
 
-export default function TripGallery({ trips, numPhotosCol, isProfile, loading, addLike, removeLike, deleteLog, loggedUser, formattedDate }) {
+export default function TripPics({ trips, numPhotosCol, isProfile, loading, addLike, removeLike, deleteTrip, loggedUser, formattedDate }) {
     return (
         <Card.Group itemsPerRow={numPhotosCol} stackable>
             {loading ? (
@@ -22,8 +22,8 @@ export default function TripGallery({ trips, numPhotosCol, isProfile, loading, a
                         isProfile={isProfile}
                         addLike={addLike}
                         removeLike={removeLike}
-                        deleteTrip={deleteTrip}
                         loggedUser={loggedUser}
+                        deleteTrip={deleteTrip}
                         formattedDate={formattedDate}
                     />
                 );
