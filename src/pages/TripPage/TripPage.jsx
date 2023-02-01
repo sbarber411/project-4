@@ -120,7 +120,7 @@ function TripPage({ loggedUser, handleLogout }) {
             {/* <Divider horizontal className="header"></Divider> */}
 
             <Grid.Row>
-                {/* <Image src="https://media3.giphy.com/media/AErExHJVxRbkm5hPkB/giphy.gif?cid=ecf05e476vnne6m7ln12g04a6ky4y4swlc0mthwgoeul2poa&rid=giphy.gif&ct=g" size="small" circular /> */}
+                <Image src="" size="small" circular />
             </Grid.Row>
             <Grid.Row>
                 <Grid.Column style={{ maxWidth: 680 }}>

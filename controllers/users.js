@@ -55,11 +55,11 @@ async function profile(req, res) {
     const user = await User.findOne({ username: req.params.username });
     if (!user) return res.status(404).json({ error: "User not found" });
 
-    const logs = await Log.find({ user: user._id }).populate("user").exec();
+    const trips = await Trip.find({ user: user._id }).populate("user").exec();
     res.status(200).json({
       data: {
         user: user,
-        logs: logs,
+        trips: trips,
       }
     });
   } catch (err) {

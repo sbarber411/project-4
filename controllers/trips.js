@@ -1,17 +1,17 @@
 import Trip from "../models/trip.js";
-
-const S3 = require("aws-sdk/clients/s3");
+import User from "../models/user.js";
+import S3 from "aws-sdk/clients/s3.js";
 const s3 = new S3(); // initate the S3 constructor which can talk to aws/s3 our bucket!
 // import uuid to help generate random names
-const { v4: uuidv4 } = require("uuid");
+import { v4 as uuidv4 } from "uuid";
 // since we are sharing code, when you pull you don't want to have to edit the
 // the bucket name, thats why we're using an environment variable
-const BUCKET_NAME = process.env.AWS_BUCKET_NAME;
+const BUCKET_NAME = process.env.BUCKET_NAME;
 
-module.exports = {
+export default {
     create,
     index,
-    deleteLog
+    deleteTrip
 };
 
 function create(req, res) {
@@ -25,7 +25,7 @@ function create(req, res) {
         console.log("=======================");
         if (err) return res.status(400).json({ err: "Check Terminal error with AWS" });
         try {
-            // Using our model to create a document in the logs collection in mongodb
+            // Using our model to create a document in the trips collection in mongodb
             const trip = await Trip.create({
                 category: req.body.category,
                 location: req.body.location,
@@ -44,9 +44,9 @@ function create(req, res) {
 
 async function index(req, res) {
     try {
-        // this populates the user when you find the logs
+        // this populates the user when you find the trips
         // so you'll have access to the users information
-        // when you fetch the logs
+        // when you fetch the trips
         const trips = await Trip.find({}).populate("user").exec();
         res.status(200).json({ data: trips });
     } catch (err) {
@@ -54,7 +54,7 @@ async function index(req, res) {
     }
 }
 
-async function deleteLog(req, res) {
+async function deleteTrip(req, res) {
     try {
         await Trip.findByIdAndDelete(req.params.id);
         res.json({ data: 'trip removed' })

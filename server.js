@@ -28,12 +28,18 @@ app.use(express.json());
 // the user information to req.user
 import auth from './config/auth.js'
 
+import tripRoutes from './routes/api/trips.js';
+import likesRoutes from './routes/api/likes.js'
+
 app.use(auth); 
 // api routes must be before the "catch all" route
 import userRoutes from './routes/api/users.js';
 
 app.use('/api/users', userRoutes);
-// "catch all" route
+app.use('/api/trips', tripRoutes);
+app.use('/api', likesRoutes);
+
+
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });

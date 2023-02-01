@@ -18,4 +18,4 @@ const tripSchema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('Trip', tripSchema);
+export default mongoose.model('Trip', tripSchema);

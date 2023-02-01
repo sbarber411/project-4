@@ -12,20 +12,30 @@ export default function AddTrip({ handleAddTrip }) {
 
     const categoryOptions = [
         {
-            key: 'I am going to',
-            text: 'I am going to',
-            value: 'I am going to',
+            key: 'Restaurant/Bar Review',
+            text: 'Restaurant/Bar Review',
+            value: 'Restaurant/Bar Review',
         },
         {
-            key: 'I went to',
-            text: 'I went to',
-            value: 'I went to',
-        }
+            key: 'Accommodations Review',
+            text: 'Accommodations Review',
+            value: 'Accommodations Review',
+        },
+        {
+            key: 'Excursions Review',
+            text: 'Excursions Review',
+            value: 'Excursions Review',
+        },
+        {
+            key: 'Miscellaneous Review',
+            text: 'Miscellaneous Review',
+            value: 'Miscellaneous Review',
+        },
+       
+        
+
 
     ]
-
-
-    const [selectedCategory, setSelectedCategory] = useState("");
 
     const [selectedFile, setSelectedFile] = useState("");
 
@@ -47,7 +57,7 @@ export default function AddTrip({ handleAddTrip }) {
 
         const formData = new FormData();
         formData.append("photo", selectedFile);
-        formData.append("category", selectedCategory);
+        formData.append("category", tripForm.category);
         formData.append("location", tripForm.location);
         formData.append("title", tripForm.title);
         formData.append("text", tripForm.text);
@@ -58,7 +68,7 @@ export default function AddTrip({ handleAddTrip }) {
     return (
         <div className="form-container">
             <Header as="h2" color='orange' textAlign="center">
-                The whole world awaits! 
+            The whole world awaits! 
             </Header>
             <Form autoComplete="off" onSubmit={handleSubmit}>
                 <Form.Group widths='equal'>
@@ -67,8 +77,8 @@ export default function AddTrip({ handleAddTrip }) {
                         fluid
                         selection
                         className="form-input"
-                        value={selectedCategory}
-                        onChange={(e, data) => setSelectedCategory(data.value)}
+                        value={tripForm.category}
+                        onChange={(e, data) => setTripForm({...tripForm, category:data.value})}
                         options={categoryOptions}
                     />
                     <Form.Input
@@ -81,7 +91,7 @@ export default function AddTrip({ handleAddTrip }) {
                         required
                     />
                 </Form.Group>
-                {/* <Form.Input
+                <Form.Input
                     className="form-input"
                     name="title"
                     value={tripForm.title}
@@ -90,16 +100,7 @@ export default function AddTrip({ handleAddTrip }) {
                     onChange={handleChange}
                     inline
                     required
-                /> */}
-                  <Form.Select
-                        placeholder='Select Category'
-                        fluid
-                        selection
-                        className="form-input"
-                        value={selectedCategory}
-                        onChange={(e, data) => setSelectedCategory(data.value)}
-                        options={categoryOptions}
-                    />
+                />
                 <TextArea
                     className="textarea"
                     name="text"
@@ -120,16 +121,15 @@ export default function AddTrip({ handleAddTrip }) {
                     required
                 />
                 <Button
-                    color="orange"
+                    color="blue"
                     fluid
                     size="large"
                     type="submit"
                     className="btn"
                 >
-                    Confirm your trip
+                    Add a trip
                 </Button>
             </Form>
         </div >
     )
 }
-

@@ -1,6 +1,6 @@
 import Trip from '../models/trip.js'
 
-module.exports = {
+export default {
     create,
     deleteLike
 }

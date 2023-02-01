@@ -14,7 +14,7 @@ function PageHeader({ loggedUser, handleLogout }) {
                 <Link to="/" onClick={handleLogout}>
                     View All Trips
                 </Link>
-
+                &nbsp; &nbsp; &nbsp; &nbsp;
                 <Link to="/">
                     <Icon name="home"></Icon>
                 </Link>
