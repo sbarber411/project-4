@@ -61,7 +61,7 @@ export default function AddTrip({ handleAddTrip }) {
 
     return (
         <div className="form-container">
-            <Header as="h2" color='orange' textAlign="center">
+            <Header as="h2" color='orange' style={{textAlign: "center"}}>
             The whole world awaits! 
             </Header>
             <Form autoComplete="off" onSubmit={handleSubmit}>

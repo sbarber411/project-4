@@ -46,14 +46,14 @@ export default function LoginPage(props) {
   return (
     <Grid
       textAlign="center"
-      style={{ height: "100vh", width: "100vw" }}
+      style={{ height: "100vh", width: "100vw" }} 
       verticalAlign="middle"
     >
       <Grid.Column style={{ maxWidth: 450 }}>
         <Image style={{ width: 900, height: 200 }}src= "https://i.imgur.com/bmvBJ82.png" /> 
-        <div className as="h2" color="orange" textAlign="center">  
-          <h2>Welcome to traveloSOPHY!</h2>
-          <h3>The world is my playground.</h3>
+        <div className as="h2" color="orange" style={{textAlign: "center"}}>  
+          <h2 style={{ color: 'orange' }}>Welcome to traveloSOPHY!</h2>
+          <h3 style={{ color: 'orang' }}>The world is my playground.</h3>
           </div>
         <div style={{ maxWidth: 450 }}>
         <Form onSubmit={handleSubmit}>
