@@ -61,8 +61,8 @@ export default function AddTrip({ handleAddTrip }) {
 
     return (
         <div className="form-container">
-            <Header as="h2" color='orange' style={{textAlign: "center"}}>
-            The whole world awaits! 
+            <Header as="h2" color='orange' textAlign="center">
+            The Whole World Awaits! 
             </Header>
             <Form autoComplete="off" onSubmit={handleSubmit}>
                 <Form.Group widths='equal'>
@@ -75,7 +75,8 @@ export default function AddTrip({ handleAddTrip }) {
                         onChange={(e, data) => setTripForm({...tripForm, category:data.value})}
                         options={categoryOptions}
                     />
-                    <Form.Input
+                </Form.Group>
+                <Form.Input
                         className="form-input"
                         name="location"
                         value={tripForm.location}
@@ -84,13 +85,12 @@ export default function AddTrip({ handleAddTrip }) {
                         fluid
                         required
                     />
-                </Form.Group>
                 <Form.Input
                     className="form-input"
                     name="title"
                     value={tripForm.title}
                     placeholder="Enter title"
-                    style={{ width: 542, textOverflow: 'ellipsis !important'}}
+                    style={{ width: 570, textOverflow: 'ellipsis !important'}}
                     onChange={handleChange}
                     inline
                     required

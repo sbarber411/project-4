@@ -35,38 +35,61 @@ function TripCard({ trip, isProfile, addLike, removeLike, deleteTrip, loggedUser
                             {trip.user.username}
                         </Link>
                     </Card.Header>
-                    </Card.Content>
-                )}
-                <Card.Description style={{ color: 'black' }} textAlign="left" as="h4">{trip.category}<br></br><Icon name={"point"} />{trip.location}</Card.Description>
-                <Image size= "small" src={`${trip?.photoUrl}`} wrapped ui={false} />
+                </Card.Content>
+            )}
+                    <Card.Description 
+                        style={{ color: 'black' }} 
+                        textAlign="left" as="h4">{trip.category}<br></br>
+                        <Icon name={"point"} />{trip.location}
+                    </Card.Description>
+                        <Image 
+                        size= "small" 
+                        src={`${trip?.photoUrl}`} 
+                        wrapped ui={false} />
                 <Card.Content>
-                    <Card.Description style={{ color: '#ff8c00' }} as="h5">{trip.title}</Card.Description>
-                    <Card.Meta style={{ color: 'black' }} as="h5">{trip.text}</Card.Meta>
-            </Card.Content>
-        <Card.Meta style={{color:"black", textAlign: "right"}} className="quicksand">{formattedDate}</Card.Meta>
-            <Card.Content style={{textAlign: "right"}}>
-                {loggedUser._id === trip.user._id ?
-                    <Modal
-                        closeIcon
-                        open={open}
-                        trigger={<Icon
-                            name={"trash alternate outline"}
-                        />}
-                        onClose={() => setOpen(false)}
-                        onOpen={() => setOpen(true)}
-                    >          
-            <Modal.Header style={{ color: 'orange' }} >Delete Your traveloSOPHY</Modal.Header>
-                 <Modal.Content>
+                    <Card.Description 
+                        style={{ color: '#ff8c00' }} 
+                        as="h5">{trip.title}
+                    </Card.Description>
+                    <Card.Meta 
+                        style={{ color: 'black' }} 
+                        as="h5">{trip.text}
+                    </Card.Meta>
+                </Card.Content>
+                <Card.Meta 
+                    style={{color:"black", textAlign: "right"}} 
+                    className="quicksand">{formattedDate}
+                </Card.Meta>
+                <Card.Content 
+                    style={{textAlign: "right"}}>
+                    {loggedUser._id === trip.user._id ?
+                <Modal
+                    closeIcon
+                    open={open}
+                    trigger={<Icon
+                    name={"trash alternate outline"}
+                />}
+                    onClose={() => setOpen(false)}
+                    onOpen={() => setOpen(true)}
+                >          
+            <Modal.Header 
+                style={{ color: 'orange' }} >Delete Your traveloSOPHY
+            </Modal.Header>
+            <Modal.Content>
             <p>
                 Would you like to delete your review?
             </p>
             </Modal.Content>
             <Modal.Actions>
-                <Button color='red' onClick={() => setOpen(false)}>
-                    <Icon name='remove' /> No
+                <Button 
+                    color='red' 
+                    onClick={() => setOpen(false)}>
+                <Icon name='remove' /> No
                 </Button>
-                    <Button color='green' onClick={() => deleteTrip(trip._id)}>
-                        <Icon name='checkmark' /> Yes
+                <Button 
+                    color='green' onClick={() => deleteTrip(trip._id)}>
+                <Icon 
+                    name='checkmark' /> Yes
                 </Button>
                 </Modal.Actions>
                 </Modal> : <>
