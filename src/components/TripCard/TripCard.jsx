@@ -24,7 +24,8 @@ function TripCard({ trip, isProfile, addLike, removeLike, deleteTrip, loggedUser
                 <Card.Content textAlign="left">
                     <Card.Header>
                         <Link to={trip.user.username}>
-                            <Image 
+                        
+                           <Image 
                             size="medium" 
                             avatar 
                             src={ trip.user.photoUrl
@@ -33,26 +34,36 @@ function TripCard({ trip, isProfile, addLike, removeLike, deleteTrip, loggedUser
                             }
                             />
                             {trip.user.username}
+  
                         </Link>
+                       
                     </Card.Header>
                 </Card.Content>
             )}
-                    <Card.Description 
-                        style={{ color: 'black' }} 
-                        textAlign="left" as="h4">{trip.category}<br></br>
-                        <Icon name={"point"} />{trip.location}
+                    <Card.Description textAlign="center"
+                        style={{ color: 'black' }} as="h4"> 
+                        {trip.category}
                     </Card.Description>
+                    <Card.Description textAlign="right">
+                    <Icon floated="right"
+                         name={"point"}
+                         style={{color: "orange"}} /> 
+                    {trip.location}
+                    <hr></hr>
+                    </Card.Description>
+                    
                         <Image 
                         size= "small" 
                         src={`${trip?.photoUrl}`} 
                         wrapped ui={false} />
                 <Card.Content>
+                <hr></hr>
                     <Card.Description 
-                        style={{ color: '#ff8c00' }} 
+                        style={{ color: '#ff8c00', textAlign:"center"}} 
                         as="h5">{trip.title}
                     </Card.Description>
                     <Card.Meta 
-                        style={{ color: 'black' }} 
+                        style={{ color: 'black', textAlign:"center"}} 
                         as="h5">{trip.text}
                     </Card.Meta>
                 </Card.Content>
@@ -64,6 +75,7 @@ function TripCard({ trip, isProfile, addLike, removeLike, deleteTrip, loggedUser
                     style={{textAlign: "right"}}>
                     {loggedUser._id === trip.user._id ?
                 <Modal
+                    
                     closeIcon
                     open={open}
                     trigger={<Icon

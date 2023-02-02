@@ -8,19 +8,19 @@ import {
 
 function PageHeader({ loggedUser, handleLogout }) {
     return (
-        <Segment className="header" clearing color= "#ff8c00">
+        <Segment className="header" clearing color= "orange">
             <Header floated="right" >
                 &nbsp; &nbsp; &nbsp; &nbsp;
                 <Link to="/">
-                    <Icon name ="home"></Icon>
+                    <Icon name ="home" color="black"></Icon>
                 </Link>
-                <Link to="/login" onClick={handleLogout} style={{ color: '#ff8c00' }}>
+                <Link to="/login" onClick={handleLogout} style={{ color: 'orange' }}>
                     Log Out
                 </Link>
               
                
             </Header>
-            <Header floated="left" color= "#ff8c00">
+            <Header floated="left" color= "orange">
                 <Link to={`/${loggedUser?.username}`}>
                     {/* <Image
                         src={
@@ -31,7 +31,7 @@ function PageHeader({ loggedUser, handleLogout }) {
                         avatar
                     ></Image> */}
                 </Link>
-                <span style={{ color: '#ff8c00' }}>Seas the Day, {loggedUser.username} </span>
+                <span style={{ color: 'orange' }}>Seas the Day, {loggedUser.username} </span>
             </Header>
         </Segment>
     )

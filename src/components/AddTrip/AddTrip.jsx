@@ -64,27 +64,27 @@ export default function AddTrip({ handleAddTrip }) {
             <Header as="h2" color='orange' textAlign="center">
             The Whole World Awaits! 
             </Header>
-            <Form autoComplete="off" onSubmit={handleSubmit}>
+        <Form autoComplete="off" onSubmit={handleSubmit}>
                 <Form.Group widths='equal'>
-                    <Form.Select
-                        placeholder='Select Category'
-                        fluid
-                        selection
-                        className="form-input"
-                        value={tripForm.category}
-                        onChange={(e, data) => setTripForm({...tripForm, category:data.value})}
-                        options={categoryOptions}
-                    />
+                <Form.Select
+                    placeholder='Select Category'
+                    fluid
+                    selection
+                    className="form-input"
+                    value={tripForm.category}
+                    onChange={(e, data) => setTripForm({...tripForm, category:data.value})}
+                    options={categoryOptions}
+                />
                 </Form.Group>
                 <Form.Input
-                        className="form-input"
-                        name="location"
-                        value={tripForm.location}
-                        placeholder="Enter destination"
-                        onChange={handleChange}
-                        fluid
-                        required
-                    />
+                    className="form-input"
+                    name="location"
+                    value={tripForm.location}
+                    placeholder="Enter destination"
+                    onChange={handleChange}
+                    fluid
+                    required
+                />
                 <Form.Input
                     className="form-input"
                     name="title"
