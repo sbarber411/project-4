@@ -7,7 +7,6 @@ export default {
 
 async function create(req, res) {
     try {
-        console.log(req.params,'<-this is from the create function');
         const trip = await Trip.findById(req.params.id);
         trip.likes.push({ username: req.user.username, userId: req.user._id });
         await trip.save()// save it
@@ -20,7 +19,6 @@ async function create(req, res) {
 
 async function deleteLike(req, res) {
     try {
-        console.log(req.params,'<-this is from the deleteLike function');
         const trip = await Trip.findOne({ 'likes._id': req.params.id, 'likes.username': req.user.username });
         trip.likes.remove(req.params.id) 
        

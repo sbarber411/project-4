@@ -20,7 +20,7 @@ function TripCard({ trip, isProfile, addLike, removeLike, deleteTrip, loggedUser
         <Card key={trip._id} raised>
             {isProfile ? (
     
-                <Card.Content>
+                <Card.Content textAlign= "center">
                     <img src= {trip.photoUrl} />
                     <Card.Description as="h5">{trip.category} <Icon name={"point"} />{trip.location}</Card.Description>
                 </Card.Content>
@@ -31,18 +31,17 @@ function TripCard({ trip, isProfile, addLike, removeLike, deleteTrip, loggedUser
                             {trip.user.username}
                         </Link>
                     </Card.Header>
-                    <img src= {trip.photoUrl} />
+        
                     <Card.Description as="h5">{trip.category} <Icon name={"point"} />{trip.location}</Card.Description>
+                    {/* <img style={{ width: 200, height: 200 }} src= {trip.photoUrl} /> */}
                 </Card.Content>
             )}
-
-
-
-
-
-
-
-
+ <Image style={{ width: 150, height: 150 }} src={`${trip?.photoUrl}`} wrapped ui={false} />
+ &nbsp; 
+ &nbsp;
+ &nbsp;
+ &nbsp;
+ &nbsp;
 
         </Card>
     );

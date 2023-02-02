@@ -31,10 +31,6 @@ export default function AddTrip({ handleAddTrip }) {
             text: 'Miscellaneous Review',
             value: 'Miscellaneous Review',
         },
-       
-        
-
-
     ]
 
     const [selectedFile, setSelectedFile] = useState("");
@@ -49,7 +45,6 @@ export default function AddTrip({ handleAddTrip }) {
             ...tripForm,
             [e.target.name]: e.target.value,
         });
-        console.log(tripForm, '<-this is tripForm')
     }
 
     function handleSubmit(e) {
@@ -61,8 +56,7 @@ export default function AddTrip({ handleAddTrip }) {
         formData.append("location", tripForm.location);
         formData.append("title", tripForm.title);
         formData.append("text", tripForm.text);
-        console.log(formData, '<-this is formData');
-        handleAddTrip(formData); // formData is the data we want to send to the server!
+        handleAddTrip(formData); 
     }
 
     return (
@@ -121,13 +115,13 @@ export default function AddTrip({ handleAddTrip }) {
                     required
                 />
                 <Button
-                    color="blue"
+                    color="orange"
                     fluid
                     size="large"
                     type="submit"
                     className="btn"
                 >
-                    Add a trip
+                    Add your review!
                 </Button>
             </Form>
         </div >

@@ -1,9 +1,3 @@
-// function TripPage(){
-// return (
-//     <h1> Trip Page</h1>
-// )
-// }
-// export default TripPage;
 import React, { useState, useEffect } from "react";
 import { Grid, Image, Divider } from "semantic-ui-react";
 import "./TripPage.css";

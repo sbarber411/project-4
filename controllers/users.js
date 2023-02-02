@@ -1,11 +1,6 @@
 import User from '../models/user.js'
 import jwt from 'jsonwebtoken'
-// import Trip from '../models/trip.js'
 const SECRET = process.env.SECRET;
-
-// import S3 from 'aws-sdk/clients/s3.js';
-// const s3 = new S3();
-
 import { v4 as uuidv4 } from 'uuid';
 
 const BUCKET_NAME = process.env.BUCKET_NAME
@@ -64,7 +59,7 @@ async function profile(req, res) {
     });
   } catch (err) {
     console.log(err.message, " <- profile controller");
-    res.status(400).json({ error: "Something went wrong" });
+    res.status(400).json({ error: "??" });
   }
 }
 
