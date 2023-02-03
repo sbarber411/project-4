@@ -15,6 +15,7 @@ function create(req, res) {
     const params = { Bucket: BUCKET_NAME, Key: key, Body: req.file.buffer };
 
     s3.upload(params, async function (err, data) {
+        console.log(err)
         if (err) return res.status(400).json({ err: "prob error with AWS" });
         try {
             const trip = await Trip.create({
