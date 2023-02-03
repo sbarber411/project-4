@@ -31,7 +31,7 @@ function PageHeader({ loggedUser, handleLogout }) {
                         avatar
                     ></Image> */}
                 </Link>
-                <span style={{ color: 'orange' }}>Seas the Day, {loggedUser.username} </span>
+                <span style={{ color: 'orange' , textTransform: "uppercase" }}>Seas the Day, <b>{loggedUser.username}</b> ! </span>
             </Header>
         </Segment>
     )

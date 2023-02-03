@@ -98,14 +98,14 @@ function TripPage({ loggedUser, handleLogout }) {
     return (
         <Grid centered>
             <Grid.Row>
-                <Grid.Column>
+                <Grid.Column style={{ maxWidth: 1800 }}>
                     <PageHeader handleLogout={handleLogout} loggedUser={loggedUser} />
                 </Grid.Column>
             </Grid.Row>
             <Grid.Row>
                 <Image src="https://i.imgur.com/RA6LuGS.png" size="medium" />
             </Grid.Row>
-            <Grid.Row>
+            <Grid.Row columns={3}>
                 <Grid.Column style={{ maxWidth: 600 }}>
                     <AddTrip handleAddTrip={handleAddTrip} />
                 </Grid.Column>
@@ -116,17 +116,18 @@ function TripPage({ loggedUser, handleLogout }) {
             <Grid.Row>
                 <Image src="" size="small" circular />
             </Grid.Row>
-            <Grid.Row>
-                <Grid.Column style={{ maxWidth: 450,}}>
+            <Grid.Row columns={3}>
+                <Grid.Column width={15} style={{ maxWidth: 2000}}>
                     <TripPics
                         trips={trips}
-                        numPhotosCol={1}
+                        numPhotosCol={4}
                         isProfile={false}
                         loading={loading}
                         addLike={addLike}
                         removeLike={removeLike}
                         deleteTrip={handleDeleteTrip}
                         loggedUser={loggedUser}
+                       
                     />
                 </Grid.Column>
             </Grid.Row>

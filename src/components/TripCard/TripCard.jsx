@@ -25,18 +25,17 @@ function TripCard({ trip, isProfile, addLike, removeLike, deleteTrip, loggedUser
                     <Card.Header>
                         <Link to={trip.user.username}>
                         
-                           <Image 
+                           {/* <Image 
                             size="medium" 
                             avatar 
                             src={ trip.user.photoUrl
                                ? trip.user.photoUrl
                                : "https://react.semantic-ui.com/images/wireframe/square-image.png"
                             }
-                            />
+                            /> */}
                             {trip.user.username}
   
                         </Link>
-                       
                     </Card.Header>
                 </Card.Content>
             )}
@@ -44,6 +43,7 @@ function TripCard({ trip, isProfile, addLike, removeLike, deleteTrip, loggedUser
                         style={{ color: 'black' }} as="h4"> 
                         {trip.category}
                     </Card.Description>
+
                     <Card.Description textAlign="right">
                     <Icon floated="right"
                          name={"point"}
@@ -52,10 +52,11 @@ function TripCard({ trip, isProfile, addLike, removeLike, deleteTrip, loggedUser
                     <hr></hr>
                     </Card.Description>
                     
-                        <Image 
+                    <Image 
                         size= "small" 
                         src={`${trip?.photoUrl}`} 
                         wrapped ui={false} />
+
                 <Card.Content>
                 <hr></hr>
                     <Card.Description 
@@ -67,6 +68,7 @@ function TripCard({ trip, isProfile, addLike, removeLike, deleteTrip, loggedUser
                         as="h5">{trip.text}
                     </Card.Meta>
                 </Card.Content>
+
                 <Card.Meta 
                     style={{color:"black", textAlign: "right"}} 
                     className="quicksand">{formattedDate}
@@ -75,15 +77,17 @@ function TripCard({ trip, isProfile, addLike, removeLike, deleteTrip, loggedUser
                     style={{textAlign: "right"}}>
                     {loggedUser._id === trip.user._id ?
                 <Modal
-                    
                     closeIcon
                     open={open}
-                    trigger={<Icon
-                    name={"trash alternate outline"}
+                    trigger={
+                    <Icon
+                        name={"trash alternate outline"}
+                        size="large"
                 />}
                     onClose={() => setOpen(false)}
                     onOpen={() => setOpen(true)}
-                >          
+                >  
+                
             <Modal.Header 
                 style={{ color: 'orange' }} >Delete Your traveloSOPHY
             </Modal.Header>
@@ -107,7 +111,7 @@ function TripCard({ trip, isProfile, addLike, removeLike, deleteTrip, loggedUser
                 </Modal> : <>
                 </>
                 }
-                <Icon
+                <Icon style={{textAlign:"left"}}
                     name={"heart"}
                     size="large"
                     color={likeColor}

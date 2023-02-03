@@ -38,6 +38,7 @@ return (
     <Route path="/signup" element={<SignUpPage handleSignUpOrLogin={handleSignUpOrLogin} />}
     />
     <Route path="/*" element={<Navigate to="/login" />} />
+    
   </Routes>
 );
 }
