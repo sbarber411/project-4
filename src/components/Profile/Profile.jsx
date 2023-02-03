@@ -1,6 +1,6 @@
 import { Image, Grid, Segment } from "semantic-ui-react";
 
-function Profile({ user, tripsBumber }) {
+function Profile({ user, tripsNumber }) {
   return (
     <Grid textAlign="center" columns={2}>
       <Grid.Row>
@@ -9,23 +9,23 @@ function Profile({ user, tripsBumber }) {
             src={`${
               user.photoUrl
                 ? user.photoUrl
-                : "https://react.semantic-ui.com/images/wireframe/square-image.png"
+                : "https://i.imgur.com/GWaScfG.png"
             } `}
             avatar
-            size="small"
+            size="medium"
           />
         </Grid.Column>
-        <Grid.Column textAlign="left" style={{ maxWidth: 450 }}>
-          <Segment vertical>
-            <h3>{user.username}</h3>
-          </Segment>
-          <Segment>
-            <span> Bio: {user.bio}</span>
-          </Segment>
-        </Grid.Column>
-      </Grid.Row>
+        <Grid.Column textAlign="left" style={{ maxWidth: 600 }}>
+            <Segment vertical>
+                <h2>{user.username}</h2>
+                <p className="arial">
+                    traveloSOPHY <strong>{tripsNumber}</strong>
+                </p>
+            </Segment>
+                </Grid.Column>
+        </Grid.Row>
     </Grid>
-  );
+    );
 }
 
 export default Profile;

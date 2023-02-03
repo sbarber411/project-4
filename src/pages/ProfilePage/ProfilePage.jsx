@@ -64,7 +64,7 @@ function ProfilePage({ loggedUser, handleLogout }) {
     }, [username]);
 
     useEffect(() => {
-        console.log("firing!");
+        console.log("not");
         getProfile();
     }, [username, getProfile]);
 
@@ -112,7 +112,7 @@ function ProfilePage({ loggedUser, handleLogout }) {
                         loading={loading}
                         addLike={addLike}
                         removeLike={removeLike}
-                        deleteTrips={handleDeleteTrips}
+                        deleteTrips={handleDeleteTrip}
                         loggedUser={loggedUser}
                     />
                 </Grid.Column>

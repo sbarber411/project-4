@@ -22,14 +22,14 @@ function PageHeader({ loggedUser, handleLogout }) {
             </Header>
             <Header floated="left" color= "orange">
                 <Link to={`/${loggedUser?.username}`}>
-                    {/* <Image
+                    <Image
                         src={
                             loggedUser?.photoUrl
                                 ? loggedUser?.photoUrl
-                                : "https://react.semantic-ui.com/images/wireframe/square-image.png"
+                                : "https://i.imgur.com/GWaScfG.png"
                         }
                         avatar
-                    ></Image> */}
+                    ></Image>
                 </Link>
                 <span style={{ color: 'orange' , textTransform: "uppercase" }}>Seas the Day, <b>{loggedUser.username}</b> ! </span>
             </Header>
