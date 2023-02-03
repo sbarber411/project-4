@@ -22,6 +22,8 @@ const app = express();
 // app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(express.json());
+
+app.set('view engine', 'ejs');
 // app.use("/src", assetsRouter);
 // Configure the auth middleware
 // This decodes the jwt token, and assigns
@@ -42,6 +44,14 @@ app.use('/api', likesRoutes);
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+app.use(express.static(path.join(__dirname, "dist")));
+
+import manifest from './dist/manifest.json' assert {type: "json"};
+
+app.get('/*', function(req, res) {
+  res.render(path.join(__dirname, 'dist', 'index.ejs'), {manifest});
 });
 
 const { PORT = 8000 } = process.env;
