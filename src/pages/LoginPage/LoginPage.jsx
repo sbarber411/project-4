@@ -51,7 +51,7 @@ export default function LoginPage(props) {
     >
       <Grid.Column style={{ maxWidth: 450 }}>
         <Image style={{ width: 900, height: 200 }}src= "https://i.imgur.com/bmvBJ82.png" /> 
-        <div className as="h2" color="orange" style={{textAlign: "center"}}>  
+        <div className ="h2" color="orange" style={{textAlign: "center"}}>  
           <h2 style={{ color: 'orange' }}>Welcome to traveloSOPHY!</h2>
           <h3 style={{ color: 'orang' }}>The world is my playground.</h3>
           </div>

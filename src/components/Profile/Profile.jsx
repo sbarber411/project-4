@@ -9,7 +9,8 @@ function Profile({ user, tripsNumber }) {
             src={`${
               user.photoUrl
                 ? user.photoUrl
-                : "https://i.imgur.com/GWaScfG.png"
+                : "https://i.imgur.com/RyAQ7j2.jpg"
+               
             } `}
             avatar
             size="medium"
@@ -17,9 +18,9 @@ function Profile({ user, tripsNumber }) {
         </Grid.Column>
         <Grid.Column textAlign="left" style={{ maxWidth: 600 }}>
             <Segment vertical>
-                <h2>{user.username}</h2>
+                <h2> {user.username}</h2>
                 <p className="arial">
-                    traveloSOPHY <strong>{tripsNumber}</strong>
+                    Followers: <strong>{tripsNumber}</strong>  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Following: <strong>{tripsNumber}</strong>
                 </p>
             </Segment>
                 </Grid.Column>

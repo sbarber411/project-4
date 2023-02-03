@@ -8,8 +8,12 @@ import {
 
 function PageHeader({ loggedUser, handleLogout }) {
     return (
-        <Segment className="header" clearing color= "orange">
+        <Segment className="header" clearing color= "black">
             <Header floated="right" >
+            
+                <Link to="/" style={{ color: 'orange' }}>
+                    View All Posts
+                </Link>
                 &nbsp; &nbsp; &nbsp; &nbsp;
                 <Link to="/">
                     <Icon name ="home" color="black"></Icon>
@@ -26,7 +30,7 @@ function PageHeader({ loggedUser, handleLogout }) {
                         src={
                             loggedUser?.photoUrl
                                 ? loggedUser?.photoUrl
-                                : "https://i.imgur.com/GWaScfG.png"
+                                : "https://i.imgur.com/RyAQ7j2.jpg"
                         }
                         avatar
                     ></Image>

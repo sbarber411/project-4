@@ -25,14 +25,14 @@ function TripCard({ trip, isProfile, addLike, removeLike, deleteTrip, loggedUser
                     <Card.Header>
                         <Link to={trip.user.username}>
                         
-                           {/* <Image 
+                           <Image 
                             size="medium" 
                             avatar 
                             src={ trip.user.photoUrl
                                ? trip.user.photoUrl
-                               : "https://react.semantic-ui.com/images/wireframe/square-image.png"
+                               : "https://i.imgur.com/RyAQ7j2.jpg"
                             }
-                            /> */}
+                            />
                             {trip.user.username}
   
                         </Link>
