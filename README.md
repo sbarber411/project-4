@@ -24,7 +24,7 @@ traveloSOPHY is an application developed with fellow travel lovers in mind. Whil
    Once a user is logged into their account, they are able to add a trip to their profile and the trip will post to the bottom of the page feed. Once the post is added to the bottom of the page, users will be able to like and unlike the post as well as delete the post. 
 
 4. Profile Page:
-   ![addNew](public/images/addnew.png)
+   ![profilePage](public/images/profilePage.png)
     All users will have their own profile page where they can see all of their personal post. 
 
 

@@ -117,10 +117,10 @@ function TripPage({ loggedUser, handleLogout }) {
                 <Image src="" size="small" circular />
             </Grid.Row>
             <Grid.Row columns={3}>
-                <Grid.Column width={15} style={{ maxWidth: 2000}}>
+                <Grid.Column width={15} style={{ maxWidth: 450}}>
                     <TripPics
                         trips={trips}
-                        numPhotosCol={4}
+                        numPhotosCol={1}
                         isProfile={false}
                         loading={loading}
                         addLike={addLike}

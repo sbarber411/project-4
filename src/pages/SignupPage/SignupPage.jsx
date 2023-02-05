@@ -37,8 +37,8 @@ function SignUpPage({handleSignUpOrLogin}) {
 		navigate('/')
 
 	} catch(err){
-		console.log(err.message, 'sign up not working')
-		setError('Sign up not working, check')
+		console.log(err.message, 'the sign up is not working')
+		setError('Sign up not working!')
 	}
 
   }

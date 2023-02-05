@@ -17,12 +17,6 @@ function Profile({ user, tripsNumber }) {
           />
         </Grid.Column>
         <Grid.Column textAlign="left" style={{ maxWidth: 600 }}>
-            <Segment vertical>
-                <h2> {user.username}</h2>
-                <p className="arial">
-                    Followers: <strong>{tripsNumber}</strong>  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Following: <strong>{tripsNumber}</strong>
-                </p>
-            </Segment>
                 </Grid.Column>
         </Grid.Row>
     </Grid>
