@@ -8,7 +8,7 @@ import {
 
 function PageHeader({ loggedUser, handleLogout }) {
     return (
-        <Segment className="header" clearing color= "black">
+        <Segment className="header" clearing color= "">
             <Header floated="right" >
             
                 <Link to="/" style={{ color: 'orange' }}>
