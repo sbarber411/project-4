@@ -90,7 +90,7 @@ export default function AddTrip({ handleAddTrip }) {
                     name="title"
                     value={tripForm.title}
                     placeholder="Enter title"
-                    style={{ width: 450, textOverflow: 'ellipsis !important'}}
+                    style={{ width: 460, textOverflow: 'ellipsis !important'}}
                     onChange={handleChange}
                     inline
                     required
